@@ -11,13 +11,14 @@ function is called when "col" queens are
 already placed in columns from 0 to col -1.
 So we need to check only left side for
 attacking queens */
-bool isSafe(vector<vector<int> > board,
-			int row, int col)
+
+bool isSafe(vector<vector<int> > board,int row, int col)
 {
 	int i, j;
 	int N = board.size();
 
 	/* Check this row on left side */
+ 
 	for (i = 0; i < col; i++)
 		if (board[row][i])
 			return false;
@@ -37,6 +38,7 @@ bool isSafe(vector<vector<int> > board,
 
 /* A recursive utility function to solve N
 Queen problem */
+
 bool solveNQUtil(vector<vector<int> >& board, int col)
 {
 	/* base case: If all queens are placed
@@ -54,8 +56,7 @@ bool solveNQUtil(vector<vector<int> >& board, int col)
 		return true;
 	}
 
-	/* Consider this column and try placing
-	this queen in all rows one by one */
+	/* Consider this column and try placing this queen in all rows one by one */
 	bool res = false;
 	for (int i = 0; i < N; i++) {
 		/* Check if queen can be placed on
@@ -88,6 +89,7 @@ prints placement of queens in the form of 1s.
 Please note that there may be more than one
 solutions, this function prints one of the
 feasible solutions.*/
+
 
 vector<vector<int> > nQueen(int n)
 {
